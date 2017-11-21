@@ -1,0 +1,22 @@
+[
+  {
+    "ParameterKey": "SubnetId",
+    "ParameterValue": "subnet-d8ff69ae"
+  }, 
+  {
+    "ParameterKey": "VpcId",
+    "ParameterValue": "vpc-89b9f7ed"
+  },
+  {
+    "ParameterKey": "KeyName",
+    "ParameterValue": "netscaler_demo"
+  },
+  {
+    "ParameterKey": "ImageName",
+    "ParameterValue": "VpxStandard10"
+  },
+  {
+    "ParameterKey": "CliScript",
+    "ParameterValue": "enable feature lb cs ssl rewrite responder,add patset api_gw_auth_ps,add patset api_gw_unauth_ps,add patset api_gw_unauth_filetypes_ps,bind policy patset api_gw_unauth_ps \"GET /trust/v1/\",bind policy patset api_gw_unauth_filetypes_ps \"css\""
+  }
+]
