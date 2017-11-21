@@ -166,12 +166,11 @@ def configure_ip(instance_id, ns_url, ip, subnet_mask, ip_type):
 def execute_cli_script(instance_id, nsip, cli_script):
     ssh_client = paramiko.SSHClient()
     ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh_client.connect(hostname=nsip, username="nsroot", password=instance_id)
+    ssh_client.connect(hostname=nsip, username='nsroot', password=instance_id)
     for command in cli_script:
-        logger.info("Executing {}".format(command))
+        logger.info('Executing {}'.format(command))
         stdin, stdout, stderr = ssh_client.exec_command(command)
         logger.info(stdout.read())
-        logger.info(stderr.read())
 
 
 def lambda_handler(event, context):
